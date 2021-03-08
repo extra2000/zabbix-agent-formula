@@ -112,7 +112,7 @@ LogFileSize=0
 # Default:
 # Server=
 
-Server={{ config.server.host }}
+Server={{ config.passive_check.accepted_servers }}
 
 ### Option: ListenPort
 #	Agent will listen on this port for connections from the server.
@@ -122,6 +122,8 @@ Server={{ config.server.host }}
 # Default:
 # ListenPort=10050
 
+ListenPort={{ config.passive_check.listen_port }}
+
 ### Option: ListenIP
 #	List of comma delimited IP addresses that the agent should listen on.
 #	First IP address is sent to Zabbix server if connecting to it to retrieve list of active checks.
@@ -129,6 +131,8 @@ Server={{ config.server.host }}
 # Mandatory: no
 # Default:
 # ListenIP=0.0.0.0
+
+ListenIP={{ config.passive_check.listen_ip }}
 
 ### Option: StartAgents
 #	Number of pre-forked instances of zabbix_agentd that process passive checks.
@@ -138,6 +142,8 @@ Server={{ config.server.host }}
 # Range: 0-100
 # Default:
 # StartAgents=3
+
+StartAgents={{ config.passive_check.start_agents }}
 
 ##### Active checks related
 
@@ -153,7 +159,7 @@ Server={{ config.server.host }}
 # Default:
 # ServerActive=
 
-ServerActive=127.0.0.1
+ServerActive={{ config.active_check.servers }}
 
 ### Option: Hostname
 #	Unique, case sensitive hostname.
