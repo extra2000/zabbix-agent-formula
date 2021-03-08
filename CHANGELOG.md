@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/extra2000/zabbix-agent-formula/compare/v1.0.0...v2.0.0) (2021-03-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **pillar:** Pillar format for `zabbix_agent.config` have changed.
+
+### Fixes
+
+* **pillar:** Improve Zabbix configurations and differentiate between Zabbix agent passive checks and active checks configurations ([3c01940](https://github.com/extra2000/zabbix-agent-formula/commit/3c01940025123dec7fbadf63cdf2a6b0e5bb7b5c))
+
 ## 1.0.0 (2021-03-05)
 
 
