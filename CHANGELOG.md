@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.1](https://github.com/extra2000/zabbix-agent-formula/compare/v2.0.0...v2.0.1) (2021-03-09)
+
+
+### Fixes
+
+* **selinux:** Add SELinux permissions for Zabbix agent ([2f0f212](https://github.com/extra2000/zabbix-agent-formula/commit/2f0f21206f7d37e246e2b83eefc28cfc94008023))
+
 ## [2.0.0](https://github.com/extra2000/zabbix-agent-formula/compare/v1.0.0...v2.0.0) (2021-03-08)
 
 
