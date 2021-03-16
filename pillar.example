@@ -7,9 +7,9 @@ zabbix_agent:
       name: vagrant
       group: vagrant
     config:
-      hostname: "zabbix-agent-box"
+      hostname: zabbix-agent-box
       passive_check:
-        accepted_servers: zabbix-box
+        accepted_servers: "zabbix-box"
         listen_ip: 0.0.0.0
         listen_port: 10050
         start_agents: 3
