@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.0.0](https://github.com/extra2000/zabbix-agent-formula/compare/v3.0.0...v4.0.0) (2021-03-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* Pillar format has changed.
+
+### Fixes
+
+* Redesign pillar configurations due to confusing values ([8b32eee](https://github.com/extra2000/zabbix-agent-formula/commit/8b32eeeb11d7698bccbb164053d33e01bbf641b8))
+* **pod:** Add missing `ZBX_STARTAGENTS` environment ([52e63d0](https://github.com/extra2000/zabbix-agent-formula/commit/52e63d08d3c7f5f0ec400bf0aeb4148004c0efd5))
+
 ## [3.0.0](https://github.com/extra2000/zabbix-agent-formula/compare/v2.0.2...v3.0.0) (2021-03-17)
 
 
