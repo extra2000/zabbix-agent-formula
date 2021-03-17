@@ -16,17 +16,15 @@ spec:
     - name: ZBX_HOSTNAME
       value: {{ agent.config.hostname }}
     - name: ZBX_SERVER_HOST
-      value: {{ agent.config.passive_check.accepted_servers }}
+      value: {{ agent.config.zabbix_server.host }}
     - name: ZBX_SERVER_PORT
-      value: {{ agent.config.passive_check.listen_port }}
+      value: {{ agent.config.zabbix_server.port }}
     - name: ZBX_PASSIVE_ALLOW
-      value: {{ agent.config.passive_check.allow }}
+      value: {{ agent.config.passive_check }}
     - name: ZBX_STARTAGENTS
-      value: {{ agent.config.passive_check.start_agents }}
+      value: {{ agent.config.start_agents }}
     - name: ZBX_ACTIVE_ALLOW
-      value: {{ agent.config.active_check.allow }}
-    - name: ZBX_ACTIVESERVERS
-      value: {{ agent.config.active_check.servers }}
+      value: {{ agent.config.active_check }}
     volumeMounts:
     {% for storedev in agent.storage_devices %}
     - mountPath: {{ storedev }}
