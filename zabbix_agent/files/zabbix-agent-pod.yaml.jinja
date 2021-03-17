@@ -21,6 +21,8 @@ spec:
       value: {{ agent.config.passive_check.listen_port }}
     - name: ZBX_PASSIVE_ALLOW
       value: {{ agent.config.passive_check.allow }}
+    - name: ZBX_STARTAGENTS
+      value: {{ agent.config.passive_check.start_agents }}
     - name: ZBX_ACTIVE_ALLOW
       value: {{ agent.config.active_check.allow }}
     - name: ZBX_ACTIVESERVERS
