@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.2](https://github.com/extra2000/zabbix-agent-formula/compare/v2.0.1...v2.0.2) (2021-03-17)
+
+
+### Styles
+
+* **pillar, defaults.yaml:** Fix double quote placements ([15c1aa2](https://github.com/extra2000/zabbix-agent-formula/commit/15c1aa2cd0989376caf70e91e760e19fe98e6938))
+
 ### [2.0.1](https://github.com/extra2000/zabbix-agent-formula/compare/v2.0.0...v2.0.1) (2021-03-09)
 
 
