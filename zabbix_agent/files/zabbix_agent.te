@@ -1,18 +1,19 @@
 module zabbix_agent 1.0;
 
 require {
-        type proc_kcore_t;
-        type initctl_t;
-        type rpm_exec_t;
-        type zabbix_agent_t;
-        type devlog_t;
-        class file { execute getattr };
-        class fifo_file getattr;
-        class sock_file getattr;
+        type container_t;
+        type tun_tap_device_t;
+        type usb_device_t;
+        type autofs_device_t;
+        type fixed_disk_device_t;
+        type kmsg_device_t;
+        class chr_file getattr;
+        class blk_file getattr;
 }
 
-#============= zabbix_agent_t ==============
-allow zabbix_agent_t devlog_t:sock_file getattr;
-allow zabbix_agent_t initctl_t:fifo_file getattr;
-allow zabbix_agent_t proc_kcore_t:file getattr;
-allow zabbix_agent_t rpm_exec_t:file execute;
+#============= container_t ==============
+allow container_t autofs_device_t:chr_file getattr;
+allow container_t fixed_disk_device_t:blk_file getattr;
+allow container_t kmsg_device_t:chr_file getattr;
+allow container_t tun_tap_device_t:chr_file getattr;
+allow container_t usb_device_t:chr_file getattr;

@@ -4,9 +4,16 @@
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import ZABBIX_AGENT with context %}
 
-{{ ZABBIX_AGENT.configfile.destination }}:
+/opt/zabbix_agent:
+  file.directory:
+    - user: {{ ZABBIX_AGENT.hostuser.name }}
+    - group: {{ ZABBIX_AGENT.hostuser.group }}
+
+/opt/zabbix_agent/zabbix-agent-pod.yaml:
   file.managed:
-    - source: {{ ZABBIX_AGENT.configfile.source }}
+    - source: salt://zabbix_agent/files/zabbix-agent-pod.yaml.jinja
+    - user: {{ ZABBIX_AGENT.hostuser.name }}
+    - group: {{ ZABBIX_AGENT.hostuser.group }}
     - template: jinja
     - context:
-      config: {{ ZABBIX_AGENT.config }}
+      agent: {{ ZABBIX_AGENT }}

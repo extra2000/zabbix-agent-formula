@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: zabbix-agent-pod
+spec:
+  restartPolicy: OnFailure
+  hostNetwork: true
+  containers:
+  - name: agent
+    image: {{ agent.image.name }}
+    securityContext:
+      allowPrivilegeEscalation: true
+      privileged: true
+      seLinuxOptions: {}
+    env:
+    - name: ZBX_HOSTNAME
+      value: {{ agent.config.hostname }}
+    - name: ZBX_SERVER_HOST
+      value: {{ agent.config.passive_check.accepted_servers }}
+    - name: ZBX_SERVER_PORT
+      value: {{ agent.config.passive_check.listen_port }}
+    - name: ZBX_PASSIVE_ALLOW
+      value: {{ agent.config.passive_check.allow }}
+    - name: ZBX_ACTIVE_ALLOW
+      value: {{ agent.config.active_check.allow }}
+    - name: ZBX_ACTIVESERVERS
+      value: {{ agent.config.active_check.servers }}
+    volumeMounts:
+    {% for storedev in agent.storage_devices %}
+    - mountPath: {{ storedev }}
+      name: storedev-{{ loop.index }}
+      readOnly: true
+    {% endfor %}
+    {% for storemount in agent.storage_mounts %}
+    - mountPath: {{ storemount.container_path }}
+      name: storemount-{{ loop.index }}-{{ storemount.name }}
+      readOnly: true
+    {% endfor %}
+  volumes:
+  {% for storedev in agent.storage_devices %}
+  - name: storedev-{{ loop.index }}
+    hostPath:
+      path: {{ storedev }}
+  {% endfor %}
+  {% for storemount in agent.storage_mounts %}
+  - name: storemount-{{ loop.index }}-{{ storemount.name }}
+    hostPath:
+      path: {{ storemount.host_path }}
+  {% endfor %}

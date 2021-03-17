@@ -1,16 +1,6 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 
-openSUSE Leap 15.2:
-  service:
-    name: zabbix-agentd.service
-  configfile:
-    source: salt://zabbix_agent/files/zabbix_agentd.conf.opensuse-leap.jinja
-    destination: /etc/zabbix/zabbix-agentd.conf
+openSUSE Leap 15.2: {}
 
-openSUSE Tumbleweed:
-  service:
-    name: zabbix_agentd.service
-  configfile:
-    source: salt://zabbix_agent/files/zabbix_agentd.conf.opensuse-tumbleweed.jinja
-    destination: /etc/zabbix/zabbix_agentd.conf
+openSUSE Tumbleweed: {}

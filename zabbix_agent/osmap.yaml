@@ -3,34 +3,14 @@
 
 Arch: {}
 
-CentOS:
-  service:
-    name: zabbix-agent.service
-  configfile:
-    source: salt://zabbix_agent/files/zabbix_agentd.conf.centos.jinja
-    destination: /etc/zabbix/zabbix_agentd.conf
+CentOS: {}
 
 CentOS Stream: {}
 
-Debian:
-  service:
-    name: zabbix-agent.service
-  configfile:
-    source: salt://zabbix_agent/files/zabbix_agentd.conf.debian.jinja
-    destination: /etc/zabbix/zabbix_agentd.conf
+Debian: {}
 
-Fedora:
-  service:
-    name: zabbix-agent.service
-  configfile:
-    source: salt://zabbix_agent/files/zabbix_agentd.conf.fedora.jinja
-    destination: /etc/zabbix_agentd.conf
+Fedora: {}
 
 SUSE: {}
 
-Ubuntu:
-  service:
-    name: zabbix-agent.service
-  configfile:
-    source: salt://zabbix_agent/files/zabbix_agentd.conf.ubuntu.jinja
-    destination: /etc/zabbix/zabbix_agentd.conf
+Ubuntu: {}

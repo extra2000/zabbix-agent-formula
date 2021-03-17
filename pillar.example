@@ -6,12 +6,20 @@ zabbix_agent:
     hostuser:
       name: vagrant
       group: vagrant
+    storage_devices:
+      - /dev/vda
+    storage_mounts:
+      - name: rootfs
+        host_path: /
+        container_path: /rootfs
     config:
       hostname: zabbix-agent-box
       passive_check:
+        allow: true
         accepted_servers: "zabbix-box"
         listen_ip: 0.0.0.0
         listen_port: 10050
         start_agents: 3
       active_check:
+        allow: true
         servers: "zabbix-box:10051"
