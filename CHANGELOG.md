@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/extra2000/zabbix-agent-formula/compare/v2.0.2...v3.0.0) (2021-03-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* Zabbix agent deployment has changed into Podman pod only.
+
+### Features
+
+* Revamp deployment into Podman pod ([b532bd4](https://github.com/extra2000/zabbix-agent-formula/commit/b532bd46bcdd8199f3f1e87d41a1efae466e52f1))
+
 ### [2.0.2](https://github.com/extra2000/zabbix-agent-formula/compare/v2.0.1...v2.0.2) (2021-03-17)
 
 
