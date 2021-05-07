@@ -16,4 +16,5 @@
     - group: {{ ZABBIX_AGENT.hostuser.group }}
     - template: jinja
     - context:
+      projectname: {{ ZABBIX_AGENT.projectname }}
       agent: {{ ZABBIX_AGENT }}
