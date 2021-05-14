@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/extra2000/zabbix-agent-formula/compare/v4.0.0...v5.0.0) (2021-05-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* Naming scheme for pod has changed.
+
+### Code Refactoring
+
+* Prefix pod with `projectname` value ([bf0f7ae](https://github.com/extra2000/zabbix-agent-formula/commit/bf0f7ae432b0ee8f4161e813c171740b8e275e49))
+
 ## [4.0.0](https://github.com/extra2000/zabbix-agent-formula/compare/v3.0.0...v4.0.0) (2021-03-17)
 
 
